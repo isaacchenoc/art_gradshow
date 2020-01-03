@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Montserrat:200,200i,400,700|Oswald&display=swap" rel="stylesheet">
+    <title>Artists</title>
+</head>
+<body>
+    <!-- Each modal is a section that contains artist's name, workshop, degree, artist statement, website and social link, the artworks and some extra information about the artworks -->
+    <!-- A modal which contains a detailed single artist page -->
+    <section id="jda" class="modal">
+        <div class="description_container">
+            <button type="button" onclick="backtoprevious()" class="close_button">×</button>
+            <h2>John Doe A</h2>
+            <h3>Jewellery & Object</h3>
+            <h3>Master of Visual Arts</h3>
+            <article>
+                <h3>Artist Statement</h3>
+                <p>Artist statment goes to here Artist statment goes to here Artist statment goes to here Artist statment goes to here Artist statment goes to here Artist statment goes to here Artist statment goes to here Artist statment goes to here Artist statment goes to here Artist statment goes to here Artist statment goes to here Artist statment goes to here Artist statment goes to here Artist statment goes to here Artist statment goes to here</p>
+            </article>
+            <ul>
+                <li><a href="#"><img src="icon_images/web.png" alt="web icon"></a></li>
+                <!-- The website icon image is free online resource from https://www.konfest.com/product/free-png-website-icons-79/ -->
+                <li><a href="#"><img src="icon_images/ins.png" alt="instagram icon"></a></li>
+                <!-- The instagram icon image is free online resource from https://www.freepik.com/free-icon/instagram-logo_810881.htm -->
+            </ul>
+        </div>
+        <figure class="artwork_slider" role="group">
+            <figure>
+                <img src="all_artists_images/abstract-2468874_1920.jpg" alt="artwork image">
+            </figure>
+            <figure>
+                <img src="all_artists_images/pencils-452238_1920.jpg" alt="artwork image">
+            </figure>
+            <figure>
+                <img src="all_artists_images/watercolor-1020509_1920.jpg" alt="artwork image">
+            </figure>
+            <figure>
+                <img src="all_artists_images/woman-1369253_1920.jpg" alt="artwork image">
+            </figure>
+            <figure>
+                <img src="all_artists_images/painting-911804_1920.jpg" alt="artwork image">
+            </figure>
+        </figure>
+    </section>
+
+    <!-- This section is used to capture all the content that are not in the modals, so that when the modals are shown, the other content would be blurred to emphasize the modals -->
+    <section class = "blurred-whilemodal">
+        <!-- Hamburger menu button - a label and an input used to toggle the menu -->
+        <input id="menu_checkbox" type="checkbox"><label class="hamburger_menu" for="menu_checkbox">&#9776;</label>
+        <h1><a href="index.html">GRAD <br> SHOW <span class="strong_number">2019</span></a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="visit.html">Visit</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+
+        <!-- Below are three groups of inputs and labels that are used to filter all artists -->
+        <!-- Three filters will be working at the same time so that users will be able to find the artists with specific letters, degrees and workshops -->
+
+        <!-- These three labels are indicators which intended to show the current selected letter, degree and workshop in order to save some space in small screen mode -->
+        <input name="alpha_checkbox" type="checkbox" id="show-alpha-options"><label for="show-alpha-options" id="current-alpha">A - Z</label>
+        <input name="degree_checkbox" type="checkbox" id="show-degree-options"><label for="show-degree-options" id="current-degree"> All Degrees </label>
+        <input name="workshop_checkbox" type="checkbox" id="show-workshop-options"><label for="show-workshop-options" id="current-workshop"> All Workshops </label>
+        <br>
+        
+        <!-- alphabet filter group - inputs and labels used to filter the listing artists in terms of alphabet -->
+        <input name="alpha" type="radio" id="show-alpha-a2z" checked><label for="show-alpha-a2z" onclick="set_labelcontent('current-alpha', 'A - Z')">A - Z</label>
+        <input name="alpha" type="radio" id="show-alpha-a"><label for="show-alpha-a" onclick="set_labelcontent('current-alpha', 'A')">A</label>
+        <input name="alpha" type="radio" id="show-alpha-b"><label for="show-alpha-b" onclick="set_labelcontent('current-alpha', 'B')">B</label>
+        <input name="alpha" type="radio" id="show-alpha-c"><label for="show-alpha-c" onclick="set_labelcontent('current-alpha', 'C')">C</label>
+        <input name="alpha" type="radio" id="show-alpha-d"><label for="show-alpha-d" onclick="set_labelcontent('current-alpha', 'D')">D</label>
+        <input name="alpha" type="radio" id="show-alpha-e"><label for="show-alpha-e" onclick="set_labelcontent('current-alpha', 'E')">E</label>
+        <input name="alpha" type="radio" id="show-alpha-f"><label for="show-alpha-f" onclick="set_labelcontent('current-alpha', 'F')">F</label>
+        <input name="alpha" type="radio" id="show-alpha-g"><label for="show-alpha-g" onclick="set_labelcontent('current-alpha', 'G')">G</label>
+        <input name="alpha" type="radio" id="show-alpha-h"><label for="show-alpha-h" onclick="set_labelcontent('current-alpha', 'H')">H</label>
+        <input name="alpha" type="radio" id="show-alpha-i"><label for="show-alpha-i" onclick="set_labelcontent('current-alpha', 'I')">I</label>
+        <input name="alpha" type="radio" id="show-alpha-j"><label for="show-alpha-j" onclick="set_labelcontent('current-alpha', 'J')">J</label>
+        <input name="alpha" type="radio" id="show-alpha-k"><label for="show-alpha-k" onclick="set_labelcontent('current-alpha', 'K')">K</label>
+        <input name="alpha" type="radio" id="show-alpha-l"><label for="show-alpha-l" onclick="set_labelcontent('current-alpha', 'L')">L</label>
+        <input name="alpha" type="radio" id="show-alpha-m"><label for="show-alpha-m" onclick="set_labelcontent('current-alpha', 'M')">M</label>
+        <input name="alpha" type="radio" id="show-alpha-n"><label for="show-alpha-n" onclick="set_labelcontent('current-alpha', 'N')">N</label>
+        <input name="alpha" type="radio" id="show-alpha-o"><label for="show-alpha-o" onclick="set_labelcontent('current-alpha', 'O')">O</label>
+        <input name="alpha" type="radio" id="show-alpha-p"><label for="show-alpha-p" onclick="set_labelcontent('current-alpha', 'P')">P</label>
+        <input name="alpha" type="radio" id="show-alpha-q"><label for="show-alpha-q" onclick="set_labelcontent('current-alpha', 'Q')">Q</label>
+        <input name="alpha" type="radio" id="show-alpha-r"><label for="show-alpha-r" onclick="set_labelcontent('current-alpha', 'R')">R</label>
+        <input name="alpha" type="radio" id="show-alpha-s"><label for="show-alpha-s" onclick="set_labelcontent('current-alpha', 'S')">S</label>
+        <input name="alpha" type="radio" id="show-alpha-t"><label for="show-alpha-t" onclick="set_labelcontent('current-alpha', 'T')">T</label>
+        <input name="alpha" type="radio" id="show-alpha-u"><label for="show-alpha-u" onclick="set_labelcontent('current-alpha', 'U')">U</label>
+        <input name="alpha" type="radio" id="show-alpha-v"><label for="show-alpha-v" onclick="set_labelcontent('current-alpha', 'V')">V</label>
+        <input name="alpha" type="radio" id="show-alpha-w"><label for="show-alpha-w" onclick="set_labelcontent('current-alpha', 'W')">W</label>
+        <input name="alpha" type="radio" id="show-alpha-x"><label for="show-alpha-x" onclick="set_labelcontent('current-alpha', 'X')">X</label>
+        <input name="alpha" type="radio" id="show-alpha-y"><label for="show-alpha-y" onclick="set_labelcontent('current-alpha', 'Y')">Y</label>
+        <input name="alpha" type="radio" id="show-alpha-z"><label for="show-alpha-z" onclick="set_labelcontent('current-alpha', 'Z')">Z</label>
+        <br>
+
+        <!-- degree filter group - inputs and labels used to filter the listing artists in terms of degree -->
+        <input name="degree" type="radio" id="show-degree-all" checked><label for="show-degree-all" onclick="set_labelcontent('current-degree', 'All Degrees')">All Degrees</label>
+        <input name="degree" type="radio" id="show-degree-bva"><label for="show-degree-bva" onclick="set_labelcontent('current-degree', 'B.Visual Arts')">B.Visual Arts</label>
+        <input name="degree" type="radio" id="show-degree-bvah"><label for="show-degree-bvah" onclick="set_labelcontent('current-degree', 'B.Visual Arts (Hons)')">B.Visual Arts (Hons)</label>
+        <input name="degree" type="radio" id="show-degree-ga"><label for="show-degree-ga" onclick="set_labelcontent('current-degree', 'GC.Arts')">GC.Arts</label>
+        <input name="degree" type="radio" id="show-degree-mda"><label for="show-degree-mda" onclick="set_labelcontent('current-degree', 'M.Digital Arts')">M.Digital Arts</label>
+        <input name="degree" type="radio" id="show-degree-mva"><label for="show-degree-mva" onclick="set_labelcontent('current-degree', 'M.Visual Arts')">M.Visual Arts</label>
+        <br>
+
+        <!-- workshop filter group - inputs and labels used to filter the listing artists in terms of workshop -->
+        <input name="workshop" type="radio" id="show-workshop-all" checked><label for="show-workshop-all" onclick="set_labelcontent('current-workshop', 'All Workshops')">All Workshops</label>
+        <input name="workshop" type="radio" id="show-workshop-vid"><label for="show-workshop-vid" onclick="set_labelcontent('current-workshop', 'Animation & Video')">Animation & Video</label>
+        <input name="workshop" type="radio" id="show-workshop-cer"><label for="show-workshop-cer" onclick="set_labelcontent('current-workshop', 'Ceramics')">Ceramics</label>
+        <input name="workshop" type="radio" id="show-workshop-fur"><label for="show-workshop-fur" onclick="set_labelcontent('current-workshop', 'Furniture')">Furniture</label>
+        <input name="workshop" type="radio" id="show-workshop-gla"><label for="show-workshop-gla" onclick="set_labelcontent('current-workshop', 'Glass')">Glass</label>
+        <input name="workshop" type="radio" id="show-workshop-jew"><label for="show-workshop-jew" onclick="set_labelcontent('current-workshop', 'Jewellery & Object')">Jewellery & Object</label>
+        <input name="workshop" type="radio" id="show-workshop-pai"><label for="show-workshop-pai" onclick="set_labelcontent('current-workshop', 'Painting')">Painting</label>
+        <input name="workshop" type="radio" id="show-workshop-pho"><label for="show-workshop-pho" onclick="set_labelcontent('current-workshop', 'Photomedia')">Photomedia</label>
+        <input name="workshop" type="radio" id="show-workshop-pri"><label for="show-workshop-pri" onclick="set_labelcontent('current-workshop', 'Printmedia')">Printmedia</label>
+        <input name="workshop" type="radio" id="show-workshop-ssp"><label for="show-workshop-ssp" onclick="set_labelcontent('current-workshop', 'Sculpture & Spatial Practice')">Sculpture & Spatial Practice</label>
+        <input name="workshop" type="radio" id="show-workshop-tex"><label for="show-workshop-tex" onclick="set_labelcontent('current-workshop', 'Textiles')">Textiles</label>
+
+        <!-- The figure collection of the listing artists - filtered by the three filters -->
+        <!-- Each image is a link used to show up a modal which contains a detailed single artist page -->
+        <figure class="artist_listing" role="group">
+            <!-- Each figure has classes corresponding to the alphabet, degree and workshop. As such, by checking the filter labels, the selected classes will be displayed, otherwise, will be hidden -->
+            <figure class="vid bva alpha-a">
+                <a href="#jda"><img src="all_artists_images/abstract-2468874_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe A</figcaption>
+            </figure>
+            <figure class="tex bva alpha-b">
+                <a href="#"><img src="all_artists_images/art-1209519_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe B</figcaption>
+            </figure>
+            <figure class="tex mda alpha-c">
+                <a href="#"><img src="all_artists_images/beaded-2137080_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe C</figcaption>
+            </figure>
+            <figure class="fur bvah alpha-d">
+                <!-- Each modal has an ID, so that it can be targeted in order to show up -->
+                <a href="#"><img src="all_artists_images/beauty-1721060_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe D</figcaption>
+            </figure>
+            <figure class="cer bva alpha-e">
+                <a href="#"><img src="all_artists_images/bicycle-3045580_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe E</figcaption>
+            </figure>
+            <figure class="ssp bvah alpha-g">
+                <a href="#"><img src="all_artists_images/brush-3445376_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe F</figcaption>
+            </figure>
+            <figure class="vid bvah alpha-h">
+                <a href="#"><img src="all_artists_images/brushes-3129361_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe G</figcaption>
+            </figure>
+            <figure class="pri bva alpha-s">
+                <a href="#"><img src="all_artists_images/color-2174045_1280.png" alt="artist image"></a>
+                <figcaption>John Doe H</figcaption>
+            </figure>
+            <figure class="fur bvah alpha-l">
+                <a href="#"><img src="all_artists_images/color-3256055_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe I</figcaption>
+            </figure>
+            <figure class="pho bva alpha-r">
+                <a href="#"><img src="all_artists_images/color-4158152_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe J</figcaption>
+            </figure>
+            <figure class="pho bva alpha-x">
+                <a href="#"><img src="all_artists_images/deer-3275594_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe K</figcaption>
+            </figure>
+            <figure class="pai bva alpha-z">
+                <a href="#"><img src="all_artists_images/flower-3350053_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe L</figcaption>
+            </figure>
+            <figure class="gla mda alpha-w">
+                <a href="#"><img src="all_artists_images/girl-2696947_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe M</figcaption>
+            </figure>
+            <figure class="pho mva alpha-q">
+                <a href="#"><img src="all_artists_images/monastery-3130879_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe N</figcaption>
+            </figure>
+            <figure class="pho mva alpha-u">
+                <a href="#"><img src="all_artists_images/mosaic-200864_1920.jpg" alt="artist image"></a>
+                <figcaption>John Doe O</figcaption>
+            </figure>
+        </figure>
+    </section>
+
+    <script> 
+        // A simple JS function used to update the current selected filter labels shown in small screen mode 
+        function set_labelcontent(label_id, content) { 
+            document.getElementById(label_id).innerHTML = content; 
+            var checkbox_id = 'show-' + label_id.substring(8) + '-options';
+            document.getElementById(checkbox_id).checked = false;
+            } 
+        // A simple JS function used to go back to the previous page
+        function backtoprevious() {
+            window.history.back()
+            }
+    </script> 
+
+</body>
+</html>

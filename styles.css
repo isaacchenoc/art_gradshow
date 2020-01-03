@@ -1,0 +1,602 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    position: relative;
+    width: 220px;
+    margin: 15px 0 5px 20px;
+    z-index: 3;
+    font-size: 24px;
+    line-height: 1;
+    font-family: 'Bree Serif', serif;
+}
+
+h1 a{
+    text-decoration: none;
+    color: black;
+    line-height: 0;
+    transition: 0.5s;
+}
+
+h1 a:hover {
+    color: #d9d9d9;
+}
+
+.index_page a, .index_page{
+    color: white; /* Text color is white as the Index page does not have white background color */
+}
+
+.strong_number {
+    font-size: 50px;
+    font-family: 'Oswald', sans-serif;
+}
+
+strong {
+    font-family: 'Bree Serif', serif;
+    font-size: 48px;
+}
+
+input {
+    display: none;
+}
+
+.hamburger_menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    margin: 10px 18px 0 0;
+    text-decoration: none;
+    background-color: Transparent;
+    font-size: 40px;
+    z-index: 3;
+    transition: color 0.5s;
+    cursor: pointer;
+}
+
+.hamburger_menu:hover {
+    color: #d9d9d9;
+}
+
+nav {
+    position: absolute;
+    right:0;
+    top: 0;
+    z-index: 2;
+    transform: translate(0,-100%); /* initial tranlated to outside of the screen */
+    transition: transform 0.5s;
+}
+
+nav ul {
+    margin: 10px 60px 0 0;
+    padding: 0;
+  }
+
+nav li {
+    display: inline-block;
+    width: 100px;
+    height: 60px;
+    border: #d9d9d9;
+}
+
+nav li a{
+    text-decoration: none;
+    display: block;
+    color: black;
+    padding: 20px 0;
+    text-align: center;
+    transition: color 0.5s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav li a:hover {
+    color: #d9d9d9;
+}
+
+#menu_checkbox:checked ~ nav{
+    transform: translate(0); /* tranlated to inside of the screen by the hamburger_menu label */
+}
+
+.slideshow figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 1.0s;
+}
+
+.slideshow img{
+    vertical-align: top;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* display certain part of the slideshow image so that the image still maintains its ratio */
+}
+
+.slideshow figcaption{
+    font-size: 2vh;
+    text-align: center;
+    margin-top: -60vh;
+    font-size: 25px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.slideshow_btn {
+    display: inline-block;
+    position: relative;
+    margin-top: calc(100vh - 150px);  /* To ensure the slideshow buttons 150px away from the bottom */
+    z-index: 2;
+    width: 22px;
+    height: 22px;
+    font-size: 25px;
+    text-align: center;
+    margin-right: 20px;
+    color: white;
+}
+
+.first_btn_slideshow {
+    margin-left: calc(50vw - 81px); /* To ensure the slideshow buttons center */
+}
+
+input:checked + .slideshow_btn {
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* Use the slideshow button to show up the highlighted artist images */
+#slide-btn1:checked ~ .slideshow #slideshow_figure1 {opacity: 1;}
+#slide-btn2:checked ~ .slideshow #slideshow_figure2 {opacity: 1;}
+#slide-btn3:checked ~ .slideshow #slideshow_figure3 {opacity: 1;}
+#slide-btn4:checked ~ .slideshow #slideshow_figure4 {opacity: 1;}
+
+input[name="alpha"] + label,input[name="degree"] + label,input[name="workshop"] + label {
+    display: inline-block;
+    position: relative;
+    padding: 3px;
+    margin: 5px 10px 0 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    border-radius: 15px;
+    transition: background-color 1s;
+    cursor: pointer;
+}
+
+/* checked stage and hover stage look a bit different in the filter labels */
+
+input[name="alpha"] + label:hover {
+    background-color: #e69138ff;
+}
+
+input[name="degree"] + label:hover {
+    background-color: #6aa84fff;
+}
+
+input[name="workshop"] + label:hover {
+    background-color: #f1c232ff;
+}
+
+input[name="alpha"]:checked + label {
+    color: white;
+    font-weight: 700;
+    background-color: #e69138ff;
+}
+
+input[name="degree"]:checked + label {
+    color: white;
+    font-weight: 700;
+    background-color: #6aa84fff;
+}
+
+input[name="workshop"]:checked + label {
+    color: white;
+    font-weight: 700;
+    background-color: #f1c232ff;
+}
+
+.artist_listing{
+    margin: 0;
+}
+
+.artist_listing img{
+    width:22.5vw;
+    height:22.5vw;
+    object-fit: cover;
+    margin-left: 2vw;
+    margin-top: calc(2vw - 5px); /* ensure the vertical spacing and horizontal spacing for the artist listing images are the same */
+}
+
+.artist_listing figure {
+    float: left;
+    position: relative;
+    margin: 0;
+}
+
+.artist_listing figcaption {
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: calc(-100% - 4px + 2vw); /* To ensure the captions for artist listing images hit the top of the image */
+    margin-left: 2vw;
+    padding-top: calc(50% - 24px); /* To ensure the captions are centered horizontally in desktop mode */
+    position: absolute;
+    color: white;
+    pointer-events: none; /* so that the caption does not affect clicking the image links */
+    font-family: 'Bree Serif', serif;
+    font-size: 24px;
+    width: calc(100% - 2vw); /* To ensure the caption cover the corresponding image entirely */
+    height: calc(100% - 2vw);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s;
+}
+
+.artist_listing figure:hover figcaption {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* different workshops have different background colors for the captions */
+.artist_listing .vid figcaption {background-image: linear-gradient(to right,rgba(0, 0, 0, 0), rgba(34, 70, 34, 0.6));}
+.artist_listing .cer figcaption {background-image: linear-gradient(to right,rgba(0,0,0,0), rgba(240, 60, 60, 0.6));}
+.artist_listing .fur figcaption {background-image: linear-gradient(to right,rgba(0,0,0,0), rgba(134, 38, 129, 0.6));}
+.artist_listing .gla figcaption {background-image: linear-gradient(to right,rgba(0,0,0,0), rgba(199, 0, 139, 0.6));}
+.artist_listing .jew figcaption {background-image: linear-gradient(to right,rgba(0,0,0,0), rgba(140, 156, 156, 0.6));}
+.artist_listing .pai figcaption {background-image: linear-gradient(to right,rgba(0,0,0,0), rgba(34, 70, 34, 0.6));}
+.artist_listing .pho figcaption {background-image: linear-gradient(to right,rgba(0,0,0,0), rgba(240, 60, 60, 0.6));}
+.artist_listing .pri figcaption {background-image: linear-gradient(to right,rgba(0,0,0,0), rgba(134, 38, 129, 0.6));}
+.artist_listing .ssp figcaption {background-image: linear-gradient(to right,rgba(0,0,0,0), rgba(199, 0, 139, 0.6));}
+.artist_listing .tex figcaption {background-image: linear-gradient(to right,rgba(0,0,0,0), rgba(140, 156, 156, 0.6));}
+
+li{
+    display: inline;
+}
+
+.modal {
+    background-color: #434343ef;
+    position: fixed; /* If the modal is toggled, it will stay on the window */
+    z-index: 4;
+    margin: calc(15vh - 20px) 0 0 5vw; /* To ensure the modal has equal margin even top-bottom margins and right-left margins */
+    width: 90vw;
+    height: 70vh;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    font-family: 'Montserrat', sans-serif;
+    visibility: hidden;
+    transform: translate(0,-150%); /* initially translated all modals to the outside of the screen */
+    transition: transform 1s, visibility 1s;
+}
+
+.modal:target {
+    visibility: visible;
+    transform: translate(0); /* once a modal is targeted by its artist image link, the modal will slide down */
+}
+
+.modal:target ~ .blurred-whilemodal {
+    filter: blur(5px);
+    z-index: 1;
+}
+
+.modal figure {
+    margin: 0;
+    display: inline-block;
+}
+
+.modal img {
+    width: auto; /* so that it keeps its ratio */
+    height: 70vh;
+    margin: 0;
+}
+
+.modal iframe {
+    height: 69vh;
+    width: 66vw;
+    margin: 0;
+}
+
+.modal figcaption {
+    color: white;
+    background-color: rgba(8, 6, 4, 0.651);
+    position: relative;
+    text-align: right;
+    padding: 1vh 1vw 0 0;
+    margin-top: calc(-6vh - 4px); /* To ensure the bottom of the artwork image captions hit the images */
+    font-size: 7.5px;
+    font-weight: 200;
+    font-style: italic;
+    height: 5vh;
+    pointer-events: none;
+}
+
+.modal .artwork_slider {
+    width: 66vw;
+    height: 70vh;
+    white-space:nowrap; /* so that the artwork sliders are scrollable in x-axi */
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.modal .description_container {
+    width: 18vw;
+    height: 62vh;
+    margin: 2vw 3vw 0 3vw;
+    float: right;
+    color: white;
+    overflow: scroll; /* so that the artist decription part are scrollable in y-axi */
+}
+
+.modal h2 {
+    margin-bottom: 0;
+}
+
+.modal h3,.modal article p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.modal article h3 {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.modal .description_container ul img {
+    width: 24px;
+    height: auto;
+    float: right;
+    margin-right: 10px;
+    filter: invert(1); /* Original color for the little icon images is black so invert color to match the text color in the modal */
+    transition: filter 0.5s;
+}
+
+.modal .description_container ul img:hover {
+    filter: invert(0);
+}
+
+.close_button {
+    border: none;
+    text-decoration: none;
+    background-color: Transparent;
+    color: white;
+    float: right;
+    font-size: 200%;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+.close_button:hover {
+    color: black;
+}
+
+#current-alpha,#current-degree,#current-workshop, #current-workshop + br{
+    display: none; /* not showing the indicator labels for current selected letter, degree and workshop in desktop mode, because they are already indicated by the filter labels */
+}
+
+/* if a filter label is checked, any figure which does not have the corresponding class will be hidden */
+/* As such, after not showing three different classes (alphabet, degree and workshop), the artists are filtered */
+#show-alpha-a:checked ~ .artist_listing figure:not(.alpha-a) {display: none;}
+#show-alpha-b:checked ~ .artist_listing figure:not(.alpha-b) {display: none;}
+#show-alpha-c:checked ~ .artist_listing figure:not(.alpha-c) {display: none;}
+#show-alpha-d:checked ~ .artist_listing figure:not(.alpha-d) {display: none;}
+#show-alpha-e:checked ~ .artist_listing figure:not(.alpha-e) {display: none;}
+#show-alpha-f:checked ~ .artist_listing figure:not(.alpha-f) {display: none;}
+#show-alpha-g:checked ~ .artist_listing figure:not(.alpha-g) {display: none;}
+#show-alpha-h:checked ~ .artist_listing figure:not(.alpha-h) {display: none;}
+#show-alpha-i:checked ~ .artist_listing figure:not(.alpha-i) {display: none;}
+#show-alpha-j:checked ~ .artist_listing figure:not(.alpha-j) {display: none;}
+#show-alpha-k:checked ~ .artist_listing figure:not(.alpha-k) {display: none;}
+#show-alpha-l:checked ~ .artist_listing figure:not(.alpha-l) {display: none;}
+#show-alpha-m:checked ~ .artist_listing figure:not(.alpha-m) {display: none;}
+#show-alpha-n:checked ~ .artist_listing figure:not(.alpha-n) {display: none;}
+#show-alpha-o:checked ~ .artist_listing figure:not(.alpha-o) {display: none;}
+#show-alpha-p:checked ~ .artist_listing figure:not(.alpha-p) {display: none;}
+#show-alpha-q:checked ~ .artist_listing figure:not(.alpha-q) {display: none;}
+#show-alpha-r:checked ~ .artist_listing figure:not(.alpha-r) {display: none;}
+#show-alpha-s:checked ~ .artist_listing figure:not(.alpha-s) {display: none;}
+#show-alpha-t:checked ~ .artist_listing figure:not(.alpha-t) {display: none;}
+#show-alpha-u:checked ~ .artist_listing figure:not(.alpha-u) {display: none;}
+#show-alpha-v:checked ~ .artist_listing figure:not(.alpha-v) {display: none;}
+#show-alpha-w:checked ~ .artist_listing figure:not(.alpha-w) {display: none;}
+#show-alpha-x:checked ~ .artist_listing figure:not(.alpha-x) {display: none;}
+#show-alpha-y:checked ~ .artist_listing figure:not(.alpha-y) {display: none;}
+#show-alpha-z:checked ~ .artist_listing figure:not(.alpha-z) {display: none;}
+
+#show-degree-bva:checked ~ .artist_listing figure:not(.bva) {display: none;}
+#show-degree-bvah:checked ~ .artist_listing figure:not(.bvah) {display: none;}
+#show-degree-ga:checked ~ .artist_listing figure:not(.ga) {display: none;}
+#show-degree-mda:checked ~ .artist_listing figure:not(.mda) {display: none;}
+#show-degree-mva:checked ~ .artist_listing figure:not(.mva) {display: none;}
+
+#show-workshop-vid:checked ~ .artist_listing figure:not(.vid) {display: none;}
+#show-workshop-cer:checked ~ .artist_listing figure:not(.cer) {display: none;}
+#show-workshop-fur:checked ~ .artist_listing figure:not(.fur) {display: none;}
+#show-workshop-gla:checked ~ .artist_listing figure:not(.gla) {display: none;}
+#show-workshop-jew:checked ~ .artist_listing figure:not(.jew) {display: none;}
+#show-workshop-pai:checked ~ .artist_listing figure:not(.pai) {display: none;}
+#show-workshop-pho:checked ~ .artist_listing figure:not(.pho) {display: none;}
+#show-workshop-pri:checked ~ .artist_listing figure:not(.pri) {display: none;}
+#show-workshop-ssp:checked ~ .artist_listing figure:not(.ssp) {display: none;}
+#show-workshop-tex:checked ~ .artist_listing figure:not(.tex) {display: none;}
+
+/* responsive - desktop first to mobile */
+@media (max-aspect-ratio: 3/2){
+
+    .modal .description_container {
+        width:80vw;
+        height: 30vh;
+        margin: 3vh 0 3vh 10vw;
+        float: none;
+    }
+
+    .modal {
+        width: 100vw;
+        height: 72vh;
+        margin : 12vh 0 0 0;
+    }
+
+    .modal img{
+        height: 36vh;
+    }
+
+    .modal iframe {
+        height: 36vh;
+        width: 100vw;
+        margin: 0;
+    }
+
+    .modal .artwork_slider {
+        width:100vw;
+        height: 36vh;
+    }
+}
+    
+@media (max-width: 1000px){
+    /* if the screen width is less than 1000px, then each row in the artist listing has 3 artist images */
+    /* height, width, and margins for the images and their captions are changed accordingly */
+    .artist_listing img{
+        width:30vw;
+        height:30vw;
+        margin-left: 2.5vw;
+        margin-top: calc(2.5vw - 5px);
+    }
+
+    .artist_listing figcaption {
+        width: calc(100% - 2.5vw);
+        height: calc(100% - 2.5vw);
+        margin-top: calc(-100% - 4px + 2.5vw);
+        margin-left: 2.5vw;
+    }
+}
+
+@media (max-width: 700px){
+    /* if the screen width is less than 700px, then each row in the artist listing has 2 artist images */
+    /* height, width, and margins for the images and their captions are changed accordingly */
+
+    .artist_listing img{
+        width:45vw;
+        height:45vw;
+        margin-left: 3.33vw;
+        margin-top: calc(3.33vw - 5px);
+    }
+
+    .artist_listing figcaption {
+        width: calc(100% - 3.33vw);
+        height: calc(100% - 3.33vw);
+        margin-top: calc(-100% - 4px + 3.33vw);
+        margin-left: 3.33vw;
+    }
+
+    /* Menu also needs to be adjusted, otherwise it will overlaps with the website logo or it is hard to see the menu due to the background color*/
+    nav {
+        background-color: white;
+    }
+
+    nav ul {
+        margin: 70px 0 0 0;
+        padding: 0;
+        border: #d9d9d9;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+      }
+
+    nav li {
+        display: block;
+        width: 100vw;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-right-style: none;
+    }
+
+    #menu_checkbox:checked ~ nav a, #menu_checkbox:checked ~ .hamburger_menu, #menu_checkbox:checked ~ h1 a{
+        color: black;
+    }
+
+    #menu_checkbox:checked ~ nav a:hover, #menu_checkbox:checked ~ .hamburger_menu:hover, #menu_checkbox:checked ~ h1 a:hover{
+        color: #d9d9d9;
+    }
+
+    /* hide the filter labels to save space */
+    input[name="alpha"] + label,input[name="degree"] + label,input[name="workshop"] + label, label + br{
+        display: none;
+    }
+
+    /* use indicator labels to show the current selected classes */
+    #current-alpha,#current-degree,#current-workshop {
+        display: inline-block;
+        color: white;
+        border-radius: 20px;
+        padding: 8px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        cursor: pointer;
+        transition: box-shadow 0.3s;
+    }
+
+    #current-alpha:hover, #current-degree:hover, #current-workshop:hover {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #current-alpha {
+        background-color: #e69138ff;
+        margin: 5px -20px 0 20px;
+    }
+
+    #current-degree {
+        background-color: #6aa84fff;
+        margin: 5px -20px 0 20px;
+    }
+
+    #current-workshop {
+        background-color: #f1c232ff;
+        margin: 5px 20px 0 20px;
+    }
+
+    /* check the indicator labels to in order to select a different class for filtering (i.e show the filter labels again) */
+    #show-alpha-options:checked ~ input[name="alpha"] + label, #show-alpha-options:checked ~ label[for="show-workshop-options"] + br{
+        display: inline-block;
+    }
+
+    #show-degree-options:checked ~ input[name="degree"] + label, #show-degree-options:checked ~ label[for="show-alpha-z"] + br{
+        display: inline-block;
+    }
+
+    #show-workshop-options:checked ~ input[name="workshop"] + label, #show-workshop-options:checked ~ label[for="show-degree-mva"] + br {
+        display: inline-block;
+    }
+
+}
+
+@media (max-width: 500px){
+    /* if the screen width is less than 500px, then each row in the artist listing has only 1 artist image */
+    /* height, width, and margins for the images and their captions are changed accordingly */
+    .artist_listing img{
+        width: 90vw;
+        height: 90vw;
+        margin-left: 5vw;
+        margin-top: calc(5vw - 5px);
+    }
+
+    .artist_listing figcaption {
+        width: calc(100% - 5vw);
+        height: calc(100% - 5vw);
+        margin-top: calc(-100% - 4px + 5vw);
+        margin-left: 5vw;
+    }
+
+}
+
+/* if the device does not support hover, then show the captions for artist listing directly */
+@media (hover: none) {
+    .artist_listing figcaption {
+        text-align: right;
+        height: 15%;
+        margin-top: calc(-15% - 4px);
+        padding-right: 5%;
+        padding-top: calc((15% - 24px) / 2);
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+  }

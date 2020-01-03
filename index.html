@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Montserrat:200,200i,400,700|Oswald&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+
+    <!-- Hamburger menu button - a label and an input used to toggle the menu -->
+    <input id="menu_checkbox" type="checkbox"><label class="hamburger_menu index_page" for="menu_checkbox">&#9776;</label>
+    <h1 class="index_page"><a href="index.html">GRAD <br> SHOW <span class="strong_number">2019</span></a></h1>
+    <nav class="index_page">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="visit.html">Visit</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Slideshow buttons - labels and inputs used to switch among 4 figures -->
+    <input name="slideshow_button" type="radio" id="slide-btn1" checked><label for="slide-btn1" class="slideshow_btn first_btn_slideshow">&#9675;</label>
+    <input name="slideshow_button" type="radio" id="slide-btn2"><label for="slide-btn2" class="slideshow_btn">&#9675;</label>
+    <input name="slideshow_button" type="radio" id="slide-btn3"><label for="slide-btn3" class="slideshow_btn">&#9675;</label>
+    <input name="slideshow_button" type="radio" id="slide-btn4"><label for="slide-btn4" class="slideshow_btn">&#9675;</label>
+
+    <!-- Slideshow for some highlighted artists - controlled by the buttons above -->
+    <figure class="slideshow" role="group">
+        <figure id="slideshow_figure1">
+            <img src="all_artists_images/brush-3445376_1920.jpg" alt="slideshow image 1">
+            <figcaption><strong>John Doe A</strong><br>Master of Visual Arts</figcaption>
+        </figure>
+        <figure id="slideshow_figure2">
+            <img src="all_artists_images/color-3256055_1920.jpg" alt="slideshow image 2">
+            <figcaption><strong>John Doe B</strong><br>Bachelor of Visual Arts (Honours)</figcaption>
+        </figure>
+        <figure id="slideshow_figure3">
+            <img src="all_artists_images/beauty-1721060_1920.jpg" alt="slideshow image 3">
+            <figcaption><strong>John Doe C</strong><br>Bachelor of Visual Arts (Honours)</figcaption>
+        </figure>
+        <figure id="slideshow_figure4">
+            <img src="all_artists_images/deer-3275594_1920.jpg" alt="slideshow image 4">
+            <figcaption><strong>John Doe D</strong><br>Bachelor of Visual Arts</figcaption>
+        </figure>
+    </figure>
+
+</body>
+</html>
