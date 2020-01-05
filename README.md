@@ -1,5 +1,5 @@
 # art_gradshow
-A simple design for art student graduation show website. Note that the images used to demo the web are all free online resources from https://pixabay.com/. Please contact the author, if there is any forms of infringement. 
+A simple respondsive design for art student graduation show website. Note that the images used to demo the web are all free online resources from https://pixabay.com/. Please contact the author, if there is any forms of infringement. 
 
 This implementation is dedicated to minimise the usage of JS, as I wanted to practice my pure css skill. In other words, the implementation would be much simpler and neater with jQuery. 
 
